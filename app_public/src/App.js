@@ -16,7 +16,7 @@ function App() {
 
   const [tasks, setTask] = useState([]);
 
-  const apiBase = "https://react-task-app-01.herokuapp.com";
+  const apiBase = "https://react-task-app-01.herokuapp.com/api";
 
   useEffect(() => {
     const getTasks = async () => {

@@ -21,11 +21,6 @@ app.use(cors({
   optionSuccessStatus: 200
 }))
 
-// Frontend Build Route
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'app_public', 'build', 'index.html'))
-});
-
 // API Route
 app.use('/api', apiRoute);
 
