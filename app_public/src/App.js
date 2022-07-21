@@ -11,7 +11,7 @@ function App() {
 
   const [tasks, setTask] = useState([]);
 
-  const apiBase = "http://localhost:5000";
+  const apiBase = "https://react-task-app-01.herokuapp.com";
 
   useEffect(() => {
     const getTasks = async () => {
@@ -47,10 +47,6 @@ function App() {
 
     const data = await res.json();
     setTask([...tasks, data]);
-
-    // const id = Math.floor(Math.random() * 1000) + 1;
-    // const newTask = { id, ...task };
-    // setTask([...tasks, newTask]);
   };
 
   // Delete Task
