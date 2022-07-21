@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Navigate,
+  Route,
+  Routes,
+} from "react-router-dom";
 import About from "./components/About";
 import AddTask from "./components/AddTask";
 import Footer from "./components/Footer";
@@ -90,7 +95,8 @@ function App() {
         />
         <Routes>
           <Route
-            path=""
+            path="/"
+            exact
             element={
               <>
                 {showAddTask && <AddTask onAdd={addTask} />}
@@ -106,7 +112,8 @@ function App() {
               </>
             }
           />
-          <Route path="about" element={<About />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Footer />
       </div>
